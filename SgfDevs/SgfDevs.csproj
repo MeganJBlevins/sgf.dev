@@ -501,6 +501,7 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <None Include="scss\pages\search-results.scss" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -534,11 +535,14 @@
     <Compile Include="App_Data\Models\Profile.generated.cs" />
     <Compile Include="App_Data\Models\Register.generated.cs" />
     <Compile Include="App_Data\Models\ResetPassword.generated.cs" />
+    <Compile Include="App_Data\Models\SearchResults.generated.cs" />
     <Compile Include="App_Data\Models\Tag.generated.cs" />
     <Compile Include="App_Data\Models\TagGroup.generated.cs" />
     <Compile Include="App_Data\Models\Tags.generated.cs" />
+    <Compile Include="Composers\RegisterServiceComposer.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\MemberController.cs" />
+    <Compile Include="Controllers\SearchResultsController.cs" />
     <Compile Include="Dev\AutoMapperConfig.cs" />
     <Compile Include="Dev\DirectoryHelper.cs" />
     <Compile Include="Dev\EmailHelper.cs" />
@@ -546,11 +550,15 @@
     <Compile Include="Dev\SGFMemberIndexComposer.cs" />
     <Compile Include="Dev\UmbracoVirtualNodeByUrlRouteHandler.cs" />
     <Compile Include="Dev\WebAPI.cs" />
+    <Compile Include="Extensions\StringArrayExtensions.cs" />
+    <Compile Include="Models\SearchContentModel.cs" />
     <Compile Include="Models\ForgottenPasswordModel.cs" />
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\RegisterModel.cs" />
     <Compile Include="Models\ResetPasswordModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\ISearchService.cs" />
+    <Compile Include="Services\SearchService.cs" />
     <Compile Include="ViewModels\DirectoryResult.cs" />
     <Compile Include="ViewModels\EventViewModel.cs" />
   </ItemGroup>
@@ -687,6 +695,7 @@
     <Content Include="Views\Partials\ResetPassword.cshtml" />
     <Content Include="Views\Partials\ForgottenPassword.cshtml" />
     <Content Include="scss\modules\mobile_nav.scss" />
+    <Content Include="Views\SearchResults.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -697,6 +706,7 @@
   <ItemGroup>
     <Folder Include="Views\Email\" />
     <Folder Include="Views\MacroPartials\" />
+    <Folder Include="Views\SearchResults\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
